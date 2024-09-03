@@ -1,0 +1,91 @@
+.positions-table {
+  width: 100%;
+  padding: 20px; /* Outer container padding */
+  background-color: #fff;
+  border-radius: 8px; /* Rounded corners for the outer box */
+  margin-bottom: 20px; /* Space below the outer box */
+}
+
+.inner-box {
+  padding: 20px; /* Padding inside the inner box */
+  border: 0.1mm solid #cac2c2; /* Black border for the inner box */
+  /* border-radius: 8px; Rounded corners for the inner box */
+}
+
+.group-section {
+  margin-bottom: 20px; /* Space between groups */
+}
+
+.group-header {
+  font-size: 1.2em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px; /* Space between header and table */
+}
+
+.table {
+  width: 100%;
+  margin-bottom: 0; /* Eliminated margin to remove space below the table */
+  table-layout: fixed; /* Ensures equal column widths */
+  border-collapse: collapse;
+}
+
+.table th, .table td {
+  border: 1px solid #dee2e6;
+  padding: 8px;
+  vertical-align: middle;
+  text-align: left;
+}
+
+.table th {
+  background-color: #f8f9fa;
+}
+
+.table .text-success {
+  color: #28a745;
+}
+
+.table .text-danger {
+  color: #dc3545;
+}
+
+.btn {
+  margin-right: 5px; /* Space between buttons */
+}
+
+.circular-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1em;
+  border: 1px solid #ffffff;
+  background-color: #053d6e;
+  color: #ffffff;
+  outline: none;
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  margin-right: 5px; /* Space between checkbox and text */
+  vertical-align: middle;
+}
+
+.custom-btn-color {
+  background-color: #fff;
+  border-color: #F8821E;
+  color: #F8821E;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.custom-btn-color:hover {
+  background-color: #F8821E;
+  color: #fff;
+  border-color: #F8821E;
+}

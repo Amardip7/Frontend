@@ -1,0 +1,48 @@
+.super-user-page {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  background-color: #ffe9e3;
+}
+
+.logo {
+  height: 30px; /* Adjust the height as needed */
+  width: auto;  /* Maintain aspect ratio */
+}
+
+.logout-btn {
+  margin-right: 10px;
+}
+
+.box-style {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.user-list {
+  background-color: #f9f0ff;
+}
+
+.user-initial {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-circle {
+  width: 30px;
+  height: 30px;
+  background-color: #d7bce8;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+}

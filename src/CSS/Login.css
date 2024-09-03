@@ -1,0 +1,165 @@
+/* Global Styles */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    /* font-family: Arial, sans-serif;
+    font-size: 16px; */
+    font-family: 'Roboto', Helvetica, Arial, 'sans-serif';  /*font-family: Arial, 'sans-serif'; */
+    font-size: 13px; line-height: 1.4;/*14px*/
+    line-height: 1.5;
+    color: #333;
+    background-color: #f9f9f9;
+  }
+  
+  h1, h2 {
+    margin-bottom: 10px;
+  }
+  
+  h1 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  h2 {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  /* Login Container Styles */
+  
+  .login-container {
+    
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .recommended {
+    margin-bottom: 20px;
+  }
+  
+  .qr-code-container {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .qr-code-container img {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+  }
+  
+  /* Form Styles */
+  
+  form {
+    /* display: flex; */
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo1 {
+    margin-top: 100px;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content:center;
+  
+  }
+  
+  label {
+    margin-bottom: 10px;
+  }
+
+  /* input[type="text"], input[type="userId"] {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  } */
+  
+  input[type="text"], input[type="password"], input[type="userId"] {
+   
+    width: 100%;
+    height: 40px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  input[type="checkbox"] {
+    margin-right: 10px;
+  }
+  
+  button[type="submit"] {
+    
+    width: 100%;
+    height: 40px;
+    margin-top: 20px; 
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f17b05;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #f17b05;
+  }
+  
+  /* Footer Styles */
+  
+  .footer {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .footer p {
+    margin-bottom: 10px;
+  }
+
+  .large-dropdown {
+    font-size: 1.2em; /* Increase font size */
+    padding: 10px;   /* Add padding */
+    width: 100%;     /* Make the dropdown full width */
+    box-sizing: border-box; /* Ensure padding is included in the width */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+  }
+  
+ /* Login.css */
+.error {
+  color: red;
+  font-size: 0.875em; /* Adjust the size of the error text if needed */
+  margin-top: 0.25em; /* Add some space above the error message */
+}
+
+/* .show-password-container {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5em; 
+}
+
+.show-password-container input {
+  margin-right: 0.5em; 
+} */
+
+.btn {
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background-color: var(--orange) !important;
+  border: 1px solid var(--orange) !important;
+}

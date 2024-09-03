@@ -1,0 +1,17 @@
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.separator {
+  margin: 0 10px;
+  color: #ccc;
+  display: inline-block;
+}
+
+.custom-navbar .nav-link, .separator {
+  padding-top: 5px; /* Adjust this value as needed */
+}
+
+.custom-navbar .navbar-brand {
+  padding-top: 5px; /* Adjust this value as needed */
+}

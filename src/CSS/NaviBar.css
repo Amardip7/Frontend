@@ -1,0 +1,15 @@
+
+.custom-navbar1 {
+    background-color: #EEEEEE;
+  }
+  
+  .custom-nav1 .nav-link {
+    color: #000; /* Optional: Set the color of the links */
+  }
+  
+  .custom-nav1 .nav-link:hover {
+    color: #555; /* Optional: Change color on hover */
+  }
+  
+  /* Additional custom styles for the navigation bar can be added here */
+  

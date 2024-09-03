@@ -1,0 +1,74 @@
+.order-verification-container {
+  padding: 20px;
+  background-color: #f0f4ff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100vw; /* Set width to full viewport width */
+  margin: 0; /* Remove margin */
+  padding: 20px; /* Keep padding for inner content */
+}
+
+.order-title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.order-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.order-section {
+  margin-bottom: 20px;
+  width: 100%; /* Set width to full width */
+}
+
+.order-column {
+  display: inline-block;
+  width: 50%;
+  vertical-align: top;
+  padding: 10px;
+}
+
+.order-field {
+  margin-bottom: 15px;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.order-field span {
+  font-weight: bold;
+  color: #333;
+}
+
+.order-field strong {
+  margin-left: 10px;
+}
+
+.order-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.back-btn, .proceed-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.back-btn {
+  background-color: #fff;
+  color: #f76300;
+  border: 2px solid #f76300;
+}
+
+.proceed-btn {
+  background-color: #f76300;
+  color: #fff;
+}

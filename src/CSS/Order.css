@@ -1,0 +1,101 @@
+/* 
+.order-table-container {
+    margin: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+thead {
+    background-color: #f2f2f2;
+} */
+
+
+/* src/OrderTable.css */
+.order-table-container {
+  padding: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+.date-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.line-between {
+  height: 100%;
+  width: 1px;
+  background-color: #000;
+  margin: 0 5px;
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: 13px;
+}
+
+
+.shady-table thead {
+  background: #eee;
+  background-image: initial;
+  background-position-x: initial;
+  background-position-y: initial;
+  background-size: initial;
+  background-repeat: initial;
+  background-attachment: initial;
+  background-origin: initial;
+  background-clip: initial;
+  background-color: rgb(238, 238, 238);
+  font-weight: 500;
+}
+/* * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+} */
+
+thead {
+  display: table-header-group;
+  vertical-align: middle;
+  unicode-bidi: isolate;
+  border-color: inherit;
+  /* border-top-color: ;
+  border-right-color: ;
+  border-bottom-color: ;
+  border-left-color: ; */
+}
+tr {
+  display: table-row;
+  vertical-align: inherit;
+  unicode-bidi: isolate;
+  border-color: inherit;
+}

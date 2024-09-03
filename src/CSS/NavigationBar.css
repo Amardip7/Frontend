@@ -1,0 +1,106 @@
+.custom-navbar {
+  background-color: #fdf1e8; /* Background color for the first navbar */
+}
+
+.icicilogo {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Bold text for the first navbar links */
+.custom-navbar .custom-nav .nav-link {
+  position: relative;
+  padding-bottom: 8px;
+  color: #000; /* Set default link color */
+  font-weight: bold; /* Bold font for the first navbar */
+  transition: color 0.3s ease, padding 0.3s ease; /* Smooth transition for color and padding change */
+}
+
+/* Active link styling for the first navbar */
+.custom-navbar .custom-nav .nav-link.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px; /* Normal height for the highlight */
+  background-color: #ff5e00; /* Orange color for the highlight */
+  border-radius: 2px;
+}
+
+/* Active link styling for the second navbar */
+.second-navbar .custom-nav .nav-link.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px; /* Normal height for the highlight */
+  background-color: #ff5e00; /* Orange color for the highlight */
+  border-radius: 2px;
+}
+
+/* Widen the link on hover */
+.custom-navbar .custom-nav .nav-link:hover {
+  color: orange; /* Change color on hover */
+  padding-bottom: 9px; /* Slightly increase bottom padding on hover */
+}
+
+/* Normal font weight for the second navbar links */
+.second-navbar .custom-nav .nav-link {
+  font-weight: normal; /* Normal font weight */
+  padding-bottom: 8px;
+  color: #000; /* Default link color */
+  transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+/* Hover effect for the second navbar links */
+.second-navbar .custom-nav .nav-link:hover {
+  color: orange; /* Change color on hover */
+}
+
+/* Separator between links */
+.custom-nav .separator {
+  color: #000; /* Example color */
+}
+
+.orange-button {
+  color: #fff;
+  background-color: #ff5e00; /* Orange button color */
+  border-color: #FFA500;
+}
+
+/* Styling for the second navbar */
+.second-navbar {
+  background-color: #EEEEEE !important; /* Ensure background color is applied */
+  border-top: 1px solid #ddd; /* Optional: Add a border to separate navbars */
+  margin-top: -1px; /* Adjust if needed to ensure alignment */
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .custom-nav {
+    text-align: center;
+  }
+
+  .separator {
+    display: none;
+  }
+
+  .orange-button {
+    margin-top: 10px;
+  }
+}
+
+/* Nested dropdown styling */
+.nested-dropdown {
+  position: relative;
+}
+
+.nested-dropdown .dropdown-menu {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
