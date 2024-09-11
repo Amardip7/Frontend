@@ -13,6 +13,7 @@ import SquareOff from './components/SquareOff';
 import OrderVerification from './components/OrderVerification';
 import OpDashboard from './components/OpDashboard'
 import Acknowledgment from './components/Acknowledgement';
+import FOOrders from './components/FOOrders';
 // import { DropdownMenu } from 'react-bootstrap';
 
 
@@ -84,7 +85,7 @@ function AppContent() {
         <Route path="/commodity/orders" element={<Orders />} />
         <Route path="/f&o" element={<FuturesandOptions />} />
         <Route path="/f&o/positions" element={<FuturesandOptionsPositions />} />
-        <Route path="/f&o/orders" element={<Orders />} />
+        <Route path="/f&o/orders" element={<FOOrders />} />
         <Route path="/equity" element={<Equity />} />
         <Route path="/equity/positions" element={<EquityPositions />} />
         <Route path="/equity/orders" element={<Orders />} />

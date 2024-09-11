@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button, Form, FormControl, Container, Row, Col, Card } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import '../CSS/OpDashboard.css';
-import { fetchFOData } from '../services/F&OService';
+import { fetchEquityData } from '../services/EquityService';
 
 const OpDashboard = () => {
   const [uccId, setUccId] = useState(''); // State to hold the UCC ID
@@ -18,11 +18,11 @@ const handleSubmit = async (e) => {
     sessionStorage.setItem('uccId', uccId);
 
     // Fetch the F&O data using the UCC ID
-    const data = await fetchFOData(uccId);
-    console.log('F&O Data:', data); // Log the received data
+    const data = await fetchEquityData(uccId);
+    console.log('Equity Data:', data); // Log the received data
 
     // Navigate to the F&O page after successful data fetch
-    navigate('/f&o/positions', { state: { uccId } }); // Pass the UCC ID to the F&O page
+    navigate('/equity/positions', { state: { uccId } }); // Pass the UCC ID to the F&O page
   } catch (error) {
     setError("Failed to fetch F&O data. Please try again.");
     console.error('Error fetching F&O data:', error);

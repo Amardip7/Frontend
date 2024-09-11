@@ -1,0 +1,12 @@
+.outer-rectangle {
+    border: 2px solid black;  /* Outer border */
+    padding: 20px;            /* Padding for inner spacing */
+    margin: 20px;             /* Margin for spacing around the rectangle */
+    border-radius: 10px;      /* Rounded corners (optional) */
+    background-color: #f9f9f9; /* Light background (optional) */
+  }
+  
+  .order-table {
+    width: 100%;              /* Ensures table takes full width */
+  }
+  

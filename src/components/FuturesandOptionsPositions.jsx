@@ -61,43 +61,75 @@ const FuturesandOptions = () => {
     }));
   };
 
-  const handleSquareOff = (contract, qty, productType, expiryDate, exchangeCode, fullContractDetails) => {
+  const handleSquareOff = (contractDetails) => {
     const squareOffData = {
       contracts: [{
-        contract, 
-        qty, 
-        productType, 
-        expiryDate, 
-        exchangeCode, 
-        orderType: "Market",
-        fullContractDetails
+        contractDetails
       }],
     };
     navigate('/squareoff', { state: { squareOffData } });
   };
 
+  // const handleSquareOffAll = (groupName, groupedData) => {
+  //   const contractsToSquareOff = Object.keys(checkedContracts).filter(
+  //     (contract) => checkedContracts[contract] && contract.includes(groupName)
+  //   );
+  //   const contractsDetails = contractsToSquareOff.map((contract) => {
+  //     const contractDetails = groupedData[groupName].contracts.find(c => c.contract === contract);
+  //     return {
+  //       contract,
+  //       qty: contractDetails.qty,
+  //       productType: contractDetails.productType,
+  //       expiryDate: contractDetails.expiryDate,
+  //       exchangeCode: contractDetails.exchangeCode,
+  //       orderType: "Market",
+  //       fullContractDetails: contractDetails.fullContractDetails
+  //     };
+  //   });
+  //   navigate('/squareoff', { state: { squareOffData: { contracts: contractsDetails } } });
+  // };
   const handleSquareOffAll = (groupName, groupedData) => {
     const contractsToSquareOff = Object.keys(checkedContracts).filter(
       (contract) => checkedContracts[contract] && contract.includes(groupName)
     );
+    
     const contractsDetails = contractsToSquareOff.map((contract) => {
-      const contractDetails = groupedData[groupName].contracts.find(c => c.contract === contract);
-      return {
-        contract,
-        qty: contractDetails.qty,
-        productType: contractDetails.productType,
-        expiryDate: contractDetails.expiryDate,
-        exchangeCode: contractDetails.exchangeCode,
-        orderType: "Market",
-        fullContractDetails: contractDetails.fullContractDetails
-      };
+      return groupedData[groupName].contracts.find(c => c.FFO_CONTRACT === contract); // Use the whole contract object
     });
+  
     navigate('/squareoff', { state: { squareOffData: { contracts: contractsDetails } } });
   };
-
+  
+  // const groupDataByGroupName = () => {
+  //   const groupedData = {};
+  //   if (data && data.positions && data.positions.FcpDetails) {
+  //     data.positions.FcpDetails.forEach((contract) => {
+  //       const groupName = contract.FFO_CONTRACT.split("-")[1];
+  //       if (!groupedData[groupName]) {
+  //         groupedData[groupName] = {
+  //           contracts: [],
+  //           totalQty: 0,
+  //         };
+  //       }
+  //       groupedData[groupName].contracts.push({
+  //         contract: contract.FFO_CONTRACT,
+  //         position: contract.FFO_PSTN,
+  //         qty: contract.FFO_QTY,
+  //         avgCostPrice: 0, // Assuming average cost price is not available in the API response
+  //         productType: contract.FCP_PRDCT_TYP,
+  //         expiryDate: contract.FCP_EXPRY_DT,
+  //         exchangeCode: contract.FCP_XCHNG_CD,
+  //         fullContractDetails: contract // Store the full contract details
+  //       });
+  //       groupedData[groupName].totalQty += contract.FFO_QTY;
+  //     });
+  //   }
+  //   return groupedData;
+  // };
   const groupDataByGroupName = () => {
     const groupedData = {};
     if (data && data.positions && data.positions.FcpDetails) {
+      console.log('Data for grouping:', data.positions.FcpDetails);
       data.positions.FcpDetails.forEach((contract) => {
         const groupName = contract.FFO_CONTRACT.split("-")[1];
         if (!groupedData[groupName]) {
@@ -106,27 +138,21 @@ const FuturesandOptions = () => {
             totalQty: 0,
           };
         }
-        groupedData[groupName].contracts.push({
-          contract: contract.FFO_CONTRACT,
-          position: contract.FFO_PSTN,
-          qty: contract.FFO_QTY,
-          avgCostPrice: 0, // Assuming average cost price is not available in the API response
-          productType: contract.FCP_PRDCT_TYP,
-          expiryDate: contract.FCP_EXPRY_DT,
-          exchangeCode: contract.FCP_XCHNG_CD,
-          fullContractDetails: contract // Store the full contract details
-        });
-        groupedData[groupName].totalQty += contract.FFO_QTY;
+        // Push the whole contract object
+        groupedData[groupName].contracts.push(contract);
+        groupedData[groupName].totalQty += contract.FCP_OPNPSTN_QTY; // Assuming FFO_QTY exists on the contract object
       });
     }
     return groupedData;
   };
+  
 
   const renderTable = () => {
     if (loading) return <p>Loading...</p>;
     if (!data || !data.positions || !data.positions.FcpDetails) return <p>No data found</p>;
 
     const groupedData = groupDataByGroupName();
+    console.log('Grouped Data is:', groupedData);
 
     return (
       <div className="positions-table">
@@ -159,25 +185,20 @@ const FuturesandOptions = () => {
                         <td>
                           <input
                             type="checkbox"
-                            checked={checkedContracts[contractData.contract] || false}
-                            onChange={() => handleCheckboxChange(contractData.contract)}
+                            checked={checkedContracts[contractData.FFO_CONTRACT] || false}
+                            onChange={() => handleCheckboxChange(contractData.FFO_CONTRACT)}
                           />
-                          <span style={{ marginLeft: "5px" }}>{contractData.contract}</span>
+                          <span style={{ marginLeft: "5px" }}>{contractData.FFO_CONTRACT}</span>
                         </td>
-                        <td>{contractData.position || "0"}</td>
-                        <td>{contractData.qty || "0"}</td>
+                        <td>{contractData.FFO_PSTN || "0"}</td>
+                        <td>{contractData.FCP_OPNPSTN_QTY || "0"}</td>
                         <td>{!isNaN(contractData.avgCostPrice) ? contractData.avgCostPrice.toFixed(2) : "0"}</td>
                         <td>
                           <button
                             className="btn btn-outline-primary btn-sm mr-1"
                             onClick={() =>
                               handleSquareOff(
-                                contractData.contract,
-                                contractData.qty,
-                                contractData.productType,
-                                contractData.expiryDate,
-                                contractData.exchangeCode,
-                                contractData.fullContractDetails // Pass full contract details
+                                contractData
                               )
                             }
                           >
